@@ -1,0 +1,10 @@
+export const subjects = [
+    { id: 1, nome: "Matematica" },
+    { id: 2, nome: "Historia" },
+    { id: 3, nome: "Geografia" },
+    { id: 4, nome: "Filosofia" },
+    { id: 5, nome: "Portugues" },
+    { id: 6, nome: "Fisica" },
+    { id: 7, nome: "Quimica" },
+    { id: 8, nome: "Biologia" },
+]
