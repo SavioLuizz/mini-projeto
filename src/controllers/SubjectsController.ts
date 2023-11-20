@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 
 import { StudentsService } from "../services/StudentsService";
-import { SubjectsService } from "../services/subjectsService";
+import { SubjectsService } from "../services/SubjectsService";
 
 class SubjectsController {
     getAllByStudent(req: Request, res: Response) {
