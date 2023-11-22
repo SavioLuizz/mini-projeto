@@ -1,3 +1,4 @@
+
 import { students } from "../database/students";
 
 export class StudentsService {
@@ -6,7 +7,9 @@ export class StudentsService {
         return studant
     }
 
-    static getAll() {
-        return students
+    static getAll(curso: string) {
+        
+        const match = new RegExp(curso, "gi")
+        return students.filter((student) => match.test(student.curso))
     }
 }

@@ -19,7 +19,7 @@ class Student {
 const InitStudents = async() => {
     const studentsRequest = await fetch("https://rmi6vdpsq8.execute-api.us-east-2.amazonaws.com/msAluno");
     const json = await studentsRequest.json() as Student[]
-    const studentsParse = json.map(student => ({ ...student, subjects: [], library: [] }))
+    const studentsParse = json.map(student => ({ ...student, subjects: [], library: [] })) 
     students.push(...studentsParse)
 }
 

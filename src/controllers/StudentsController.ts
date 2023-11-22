@@ -3,7 +3,8 @@ import { StudentsService } from "../services/StudentsService";
 
 class StudentsController {
     getAll(req: Request, res: Response) {
-        const students = StudentsService.getAll()
+        const {curso = ""} = req.query;
+        const students = StudentsService.getAll(String(curso))
         return res.json(students)
     }
 
