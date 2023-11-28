@@ -1,4 +1,4 @@
-import { subjects } from "../database/subjects";
+import  subjects  from "../database/subjects.json";
 
 export class SubjectsService {
     static getByIds(ids: number[]) {

@@ -1,4 +1,4 @@
-import { libraries } from "../database/libraries";
+import  libraries  from "../database/libraries.json";
 
 export class LibrariesService {
     static getByIds(ids: number[]) {
