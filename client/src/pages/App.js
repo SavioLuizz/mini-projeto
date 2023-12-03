@@ -8,7 +8,7 @@ function App() {
   //       GET       SET
   const [students, setStudents] = useState()
   const [cursoFilter, setCursoFilter] = useState("")
-
+  //Filtro 
   const fetchStudents = async () => {
     const response = await fetch(`http://localhost:3001/students?curso=${cursoFilter}`)
     const json = await response.json()

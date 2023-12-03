@@ -12,6 +12,7 @@ const TableStudents = ({ students = []}) => {
                 <Table.Header>
                     <Table.Row>
                     <Table.ColumnHeaderCell>#</Table.ColumnHeaderCell>
+                    <Table.ColumnHeaderCell>Id</Table.ColumnHeaderCell>
                     <Table.ColumnHeaderCell>Nome</Table.ColumnHeaderCell>
                     <Table.ColumnHeaderCell>Curso</Table.ColumnHeaderCell>
                     <Table.ColumnHeaderCell>Ações</Table.ColumnHeaderCell>
@@ -19,9 +20,10 @@ const TableStudents = ({ students = []}) => {
                 </Table.Header>
 
                 <Table.Body>
-                    {studentsFiltered?.map(student => (
+                    {studentsFiltered?.map((student, index) => (
                         <Table.Row key={`${student.id}-${student.nome}`}>
-                            <Table.RowHeaderCell>{student.id}</Table.RowHeaderCell>
+                            <Table.RowHeaderCell>{index}</Table.RowHeaderCell>
+                            <Table.Cell>{student.id}</Table.Cell>
                             <Table.Cell>{student.nome}</Table.Cell>
                             <Table.Cell>{student.curso}</Table.Cell>
                             <Table.Cell>

@@ -12,14 +12,16 @@ const Info = ({ infos = [], title, refetch }) => {
             <Table.Header>
                 <Table.Row>
                 <Table.ColumnHeaderCell>#</Table.ColumnHeaderCell>
+                <Table.ColumnHeaderCell>Id</Table.ColumnHeaderCell>
                 <Table.ColumnHeaderCell>Nome</Table.ColumnHeaderCell>
                 </Table.Row>
             </Table.Header>
 
             <Table.Body>
-                {infos?.map(info => (
+                {infos?.map((info,index) => (
                     <Table.Row key={`${info.id}-${info.nome}`}>
-                        <Table.RowHeaderCell>{info.id}</Table.RowHeaderCell>
+                        <Table.RowHeaderCell>{index}</Table.RowHeaderCell>
+                        <Table.Cell>{info.id}</Table.Cell>
                         <Table.Cell>{info.nome}</Table.Cell>
                     </Table.Row>
                 ))}
