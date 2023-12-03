@@ -17,11 +17,7 @@ class Server {
         this.server.use(json())
         this.server.use(cors())
     }
-
-    init() {
-        console.log(students)
-    }
-
+    
     routes() {
         this.server.use(routes)
     }
