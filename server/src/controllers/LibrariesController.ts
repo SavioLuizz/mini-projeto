@@ -8,7 +8,7 @@ class LibraryController {
         const student = StudentsService.getById(Number(studentId))
 
         if (!student) {
-            return res.json({
+            return res.status(404).json({
                 statusCode: 404,
                 message: "Estudante não encontrado!!"
             })
@@ -25,7 +25,7 @@ class LibraryController {
         const student = StudentsService.getById(Number(id))
 
         if (!student) {
-            return res.json({
+            return res.status(404).json({
                 statusCode: 404,
                 message: "Estudante não encontrado!!"
             })
@@ -34,7 +34,7 @@ class LibraryController {
         const studentLibrary = student.library
 
         if (studentLibrary.includes(bookId)) {
-            return res.json({
+            return res.status(400).json({
                 statusCode: 400,
                 message: "Livro já cadastrada!!"
             })
@@ -52,7 +52,7 @@ class LibraryController {
         const student = StudentsService.getById(Number(id))
 
         if (!student) {
-            return res.json({
+            return res.status(404).json({
                 statusCode: 404,
                 message: "Estudante não encontrado!!"
             })
@@ -61,7 +61,7 @@ class LibraryController {
         const studentLibrary = student.library
 
         if (!studentLibrary.includes(bookId)) {
-            return res.json({
+            return res.status(404).json({
                 statusCode: 404,
                 message: "Livro não encontrada!!"
             })
@@ -74,6 +74,11 @@ class LibraryController {
             statusCode: 200,
             message: "Livro removida com sucesso"
         })
+    }
+
+    getAll(req: Request, res: Response) {
+        const libraries = LibrariesService.getAll()
+        return res.json(libraries)
     }
 }
 

@@ -1,4 +1,5 @@
 import express, { Express, json } from 'express';
+import cors from 'cors';
 import { students } from "./database/students";
 import routes from './routes';
 
@@ -14,6 +15,7 @@ class Server {
 
     middlewares() {
         this.server.use(json())
+        this.server.use(cors())
     }
 
     init() {

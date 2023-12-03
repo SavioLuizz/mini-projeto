@@ -9,7 +9,7 @@ class SubjectsController {
         const student = StudentsService.getById(Number(studentId))
 
         if (!student) {
-            return res.json({
+            return res.status(404).json({
                 statusCode: 404,
                 message: "Estudante não encontrado!!"
             })
@@ -26,7 +26,7 @@ class SubjectsController {
         const student = StudentsService.getById(Number(id))
 
         if (!student) {
-            return res.json({
+            return res.status(404).json({
                 statusCode: 404,
                 message: "Estudante não encontrado!!"
             })
@@ -35,7 +35,7 @@ class SubjectsController {
         const studentSubject = student.subjects
 
         if (studentSubject.includes(subjectId)) {
-            return res.json({
+            return res.status(400).json({
                 statusCode: 400,
                 message: "Materia já cadastrada!!"
             })
@@ -53,7 +53,7 @@ class SubjectsController {
         const student = StudentsService.getById(Number(id))
 
         if (!student) {
-            return res.json({
+            return res.status(404).json({
                 statusCode: 404,
                 message: "Estudante não encontrado!!"
             })
@@ -62,7 +62,7 @@ class SubjectsController {
         const studentSubject = student.subjects
 
         if (!studentSubject.includes(subjectId)) {
-            return res.json({
+            return res.status(404).json({
                 statusCode: 404,
                 message: "Materia não encontrada!!"
             })
@@ -75,6 +75,11 @@ class SubjectsController {
             statusCode: 200,
             message: "Materia removida com sucesso"
         })
+    }
+
+    getAll(req: Request, res: Response) {
+        const subjects = SubjectsService.getAll()
+        return res.json(subjects)
     }
 }
 
